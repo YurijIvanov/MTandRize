@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.println("Player X move first:");
         System.out.println("Set X player name:");
         Player X =new Player (scan.nextLine(),1);
@@ -11,7 +11,7 @@ public class Main {
         System.out.println();
         GameField field = new GameField();
         field.print_field();
-        for(;field.getNum_step()!=9;) {
+        while (field.getNum_step() != field.getMax_num_step()) {
             if(field.getNum_step()==8){
                 System.out.print("");
             }

@@ -3,10 +3,10 @@ public class GameField {
     private final int field_width =3;
     private final int field_height = 3;
     private int num_step;
-    private Player X,O;
+    private final int max_num_step = 9;
     public GameField(){
-        for(int i=0;i<field_height;i++){
-            for (int y=0;y<field_width;y++){
+        for(int i=0;i<field_width;i++){
+            for (int y=0;y<field_height;y++){
                 field[y][i] = 0;
             }
         }
@@ -15,9 +15,9 @@ public class GameField {
     public void print_field(){
         System.out.print("\n");
         System.out.println("  0 1 2");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < field_width; i++) {
             System.out.print(i + " ");
-            for (int y = 0; y < 3; y++) {
+            for (int y = 0; y < field_height; y++) {
                 if (field[y][i] == 1) {
                     System.out.print("X");
                 } else if (field[y][i] == 2) {
@@ -37,7 +37,7 @@ public class GameField {
         System.out.println();
     }
     public Boolean check_field(Player X, Player O){
-        for(int y=0;y<field_width;y++){
+        for(int y=0;y < field_height;y++){
             if(field[y][0]==1 && field[y][1]==1 && field[y][2]==1){
                 System.out.println("Player " + X.getName() + " WON");
                 return true;
@@ -46,7 +46,7 @@ public class GameField {
                 return true;
             }
         }
-        for(int i=0; i<field_height;i++) {
+        for(int i=0; i < field_width;i++) {
             if(field[0][i]==1 && field[1][i]==1 && field[2][i]==1){
                 System.out.println("Player " + X.getName() + " WON");
                 return true;
@@ -67,7 +67,7 @@ public class GameField {
         }else if (field[0][2]==2 && field[1][1]==2 && field[2][0]==2) {
             System.out.println("Player" + O.getName() + " WON");
             return true;
-        } else if (num_step==9) {
+        } else if (num_step==max_num_step) {
             System.out.println("NO WINNER");
         }
         return false;
@@ -89,5 +89,9 @@ public class GameField {
     }
     public void increaseNum_step() {
         this.num_step++;
+    }
+
+    public int getMax_num_step() {
+        return max_num_step;
     }
 }
