@@ -46,7 +46,7 @@ class LB{
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 mas[i][j] = randval;
-                System.out.print(mas[i][j] + "\t");
+                System.out.print(mas[i][j] + "\n");
                 randval += 3;
             }
             System.out.println();
