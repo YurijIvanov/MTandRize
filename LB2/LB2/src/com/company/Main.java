@@ -49,7 +49,7 @@ class LB{
                 System.out.print(mas[i][j] + "\t");
                 randval += 3;
             }
-            System.out.println(); // Перехід на новий рядок
+            System.out.println();
         }
     }
 }
