@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Variable</title>
+    </head>
+    <body>
+        <h1>хрестики-нолики</h1>
+        <table>
+            <tr th:each="row, rowNum : ${field}">
+                <td th:each="cell, colNum : ${row}">
+                    <div th:if="${cell} == 'X'">X</div>
+                    <div th:if="${cell} == 'O'">O</div>
+                    <div th:if="${cell} == ' '"> </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
